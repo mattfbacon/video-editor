@@ -1,12 +1,13 @@
 #include <gtkmm.h>
 
 class MyWindow : public Gtk::Window {
+protected:
+	Gtk::Label test_label;
 public:
-	MyWindow(){
-		auto test_label = new Gtk::Label("React Bad");
+	MyWindow() : test_label(Gtk::Label("React Bad")) {
 		set_title("Eternal Truth");
 		set_default_size(200, 200);
-		add(*test_label);
+		add(test_label);
 		show_all();
 	}
 };
